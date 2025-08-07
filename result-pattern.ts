@@ -57,3 +57,16 @@ if (asyncResult.success) {
 } else {
   console.error(asyncResult.error);
 }
+
+function exaustiveCheck(prop: "a" | "b"): string {
+  switch (prop) {
+    case "a":
+      return "";
+    case "b":
+      return "";
+
+    default:
+      prop satisfies never;
+      throw new Error("");
+  }
+}
